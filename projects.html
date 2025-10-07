@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <nav class="relative bg-gray-800">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button
+              type="button"
+              command="--toggle"
+              commandfor="mobile-menu"
+              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500"
+            >
+              <span class="absolute -inset-0.5"></span>
+              <span class="sr-only">Open main menu</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                data-slot="icon"
+                aria-hidden="true"
+                class="size-6 in-aria-expanded:hidden"
+              >
+                <path
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                data-slot="icon"
+                aria-hidden="true"
+                class="size-6 not-in-aria-expanded:hidden"
+              >
+                <path
+                  d="M6 18 18 6M6 6l12 12"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+          >
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
+                <a
+                  href="index.html"
+                  aria-current="page"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+                  >Home</a
+                >
+                <a
+                  href="about.html"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+                  >About</a
+                >
+                <a
+                  href="projects.html"
+                  class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                  >Projects</a
+                >
+                <a
+                  href="contact.html"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+                  >Contact</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- <div
+            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+          >
+            <button
+              type="button"
+              class="relative rounded-full p-1 text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500"
+            >
+              <span class="absolute -inset-1.5"></span>
+              <span class="sr-only">View notifications</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                data-slot="icon"
+                aria-hidden="true"
+                class="size-6"
+              >
+                <path
+                  d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+          //Profile dropdown 
+            <el-dropdown class="relative ml-3">
+              <button
+                class="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+              >
+                <span class="absolute -inset-1.5"></span>
+                <span class="sr-only">Open user menu</span>
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt=""
+                  class="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10"
+                />
+              </button>
+
+              <el-menu
+                anchor="bottom end"
+                popover
+                class="w-48 origin-top-right rounded-md bg-white py-1 shadow-lg outline outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden"
+                  >Your profile</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden"
+                  >Settings</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden"
+                  >Sign out</a
+                >
+              </el-menu>
+            </el-dropdown>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
+        <div class="space-y-1 px-2 pt-2 pb-3">
+          Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" 
+          <a
+            href="index.html"
+            aria-current="page"
+            class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+            >About</a
+          >
+          <a
+            href="projects.html"
+            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+            >Projects</a
+          >
+          <a
+            href="contact.html"
+            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+            >Contact</a
+          >
+        </div>
+      </el-disclosure> -->
+    </nav>
+    <!-- Hero Section -->
+    <!-- <section
+      class="h-screen flex flex-col items-center justify-center text-center"
+    >
+      <h1 class="text-5xl font-bold mb-4">
+        Hi, I'm <span class="text-blue-500">Your Name</span>
+      </h1>
+      <p class="text-xl mb-6">
+        Full Stack Developer | Python | JavaScript | Shopify
+      </p>
+      <a
+        href="#projects"
+        class="bg-blue-500 px-6 py-3 rounded-lg text-lg hover:bg-blue-600 transition"
+      >
+        View My Work
+      </a>
+    </section> -->
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-6 bg-gray-900">
+      <h2 class="text-4xl font-semibold text-center mb-10">Projects</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Project Card -->
+        <div
+          class="bg-gray-700 p-6 rounded-lg shadow-lg hover:scale-105 transition"
+        >
+          <h3 class="text-2xl font-bold mb-2">
+            Edureka Clone (Online Learning Platform Landing Page)
+          </h3>
+          <p class="text-gray-300 mb-4">
+            A responsive web application designed as a landing portal for an
+            instructor-led learning platform. Built with modern frontend
+            practices, the application features a clean UI, modular components,
+            and strong calls to action. Visitors can explore course offerings in
+            digital marketing, SEO, mobile marketing, analytics, and more. The
+            site emphasizes flexibility (rescheduling), 24/7 support, and live
+            classes to engage potential learners.
+          </p>
+          <a
+            href="https://edureka-in.netlify.app/"
+            class="text-green-400 hover:underline"
+            >Live Demo →</a
+          >
+          <a
+            href="https://github.com/Inthiyaz-Hussain/Edureka_Clone"
+            class="text-blue-400 hover:underline"
+            style="float: right"
+            >Github Link →</a
+          >
+        </div>
+        <!-- Project Card -->
+        <div
+          class="bg-gray-700 p-6 rounded-lg shadow-lg hover:scale-105 transition"
+        >
+          <h3 class="text-2xl font-bold mb-2">Portfolio Website</h3>
+          <p class="text-gray-300 mb-4">
+            A responsive personal portfolio built with Tailwind CSS and React.
+          </p>
+          <a href="#" class="text-blue-400 hover:underline">View Project →</a>
+        </div>
+        <!-- Project Card -->
+        <div
+          class="bg-gray-700 p-6 rounded-lg shadow-lg hover:scale-105 transition"
+        >
+          <h3 class="text-2xl font-bold mb-2">Resume</h3>
+          <p class="text-gray-300 mb-4">
+            A clean, responsive personal resume website to present one’s
+            professional profile, skills, experience, education, and contact
+            details in a single, modern web interface. This site acts both as an
+            online resume and a portfolio showcase.
+          </p>
+          <a
+            href="https://inthiyaz-resume.netlify.app/"
+            class="text-green-400 hover:underline"
+            >Live Demo →</a
+          >
+          <a
+            href="https://github.com/Inthiyaz-Hussain/My-Resume"
+            class="text-blue-400 hover:underline"
+            style="float: right"
+            >Github Link →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6 text-center">
+      <h2 class="text-4xl font-semibold mb-6">Contact Me</h2>
+      <p class="mb-4 text-gray-300">
+        Interested in working together? Let's connect!
+      </p>
+      <a
+        href="mailto:inthiyazhussain8779@email.com"
+        class="bg-blue-500 px-6 py-3 rounded-lg text-lg hover:bg-blue-600 transition"
+      >
+        Email Me
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-800 text-center text-gray-400">
+      © 2025 Inthiyaz-Hussain
+    </footer>
+  </body>
+</html>
