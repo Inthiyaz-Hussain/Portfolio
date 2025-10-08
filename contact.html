@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
     <title>Contact</title>
   </head>
   <body>
@@ -252,7 +254,7 @@
         <h2 class="text-2xl font-bold text-blue-700 mb-6 text-center">
           Contact Me
         </h2>
-        <form class="space-y-5">
+        <form class="space-y-5" id="contact-form">
           <div>
             <label class="block text-gray-700 mb-2" for="name">Name</label>
             <input
@@ -295,6 +297,32 @@
             Send Message
           </button>
         </form>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script> -->
+        <!-- <script>
+          (function () {
+            emailjs.init("k0uXO3xyPgOjnVNYH"); // Example: public_1a2b3c4d
+          })();
+
+          document
+            .getElementById("contact-form")
+            .addEventListener("submit", function (e) {
+              e.preventDefault();
+
+              emailjs
+                .sendForm("service_llf1f0n ", "k0uXO3xyPgOjnVNYH", this)
+                .then(
+                  () => {
+                    alert("✅ Message Sent Successfully!");
+                    this.reset();
+                  },
+                  (error) => {
+                    alert("❌ Failed to Send Message. Please Try Again.");
+                    console.error(error);
+                  }
+                );
+            });
+        </script> -->
+
         <div class="mt-8 space-y-3 text-center">
           <p>
             Email:
@@ -364,5 +392,6 @@
         </div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
